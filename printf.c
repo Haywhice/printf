@@ -2,7 +2,6 @@
 #include <stdarg>
 
 /**
- * A function that produces output according to a format
  * _printf - Outputs a formatted string.
  *  @format: Character string to print - may contain directives.
  * Return: The numbers of characters printed
@@ -10,21 +9,20 @@
 
 int _printf(const char *format, ...)
 {
-	buffer_t *output;
 	va_list args;
-	int ret;
-
-	if (format == NULL)
-		return (-1);
-	output = init_buffer();
-	if (output == NULL)
-		return (-1);
+	int i = 0;
+	int n_displayed = o;
 
 	va_start(args, format);
 
-	ret = run_printf(format, args, output);
-	return (ret);
+	while (format[i] != '\0')
+	{
+		if (_putchar(format[i]) != -1)
+			n_displayed +=
+
+		i++
+	}
+
+	va_end(args);
+	return (n_displayed);
 }
-
-
-
