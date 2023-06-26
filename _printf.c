@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					puchar(format[i]);
-					n_val +=2;
+					n_val++;
 					break;
 			}
 		}
