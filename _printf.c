@@ -2,7 +2,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, n_val;
+	unsigned int i, n_val, s_val;
 
 	va_list args;
 
@@ -25,7 +25,8 @@ int _printf(const char *format, ...)
 					n_val++;
 					break;
 				case 's':
-					n_val += put_s(va_arg(args, char *));
+					s_val = put_s(va_arg(args, char *));
+					n_val += s_val;
 					break;
 				case '%':
 					puchar('%');
