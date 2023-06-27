@@ -1,9 +1,14 @@
 #include "main.h"
 
+/**
+  * _printf - print out values
+  * @format: string that will be printed
+  *
+  * Return: returns pointer to buffer
+  */
 int _printf(const char *format, ...)
 {
 	unsigned int i, n_val, s_val;
-
 	va_list args;
 
 	va_start(args, format);
@@ -42,3 +47,4 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (n_val);
 }
+

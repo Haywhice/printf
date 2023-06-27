@@ -1,7 +1,6 @@
 #include "main.h"
-
 /**
- * _puchar - writes the character c to stdout
+ * puchar - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
@@ -10,5 +9,5 @@
 
 int puchar(char c)
 {
-	return (write(1, &c, 1));
+return (write(1, &c, 1));
 }
