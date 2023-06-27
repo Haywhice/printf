@@ -38,8 +38,9 @@ int _printf(const char *format, ...)
 					n_val++;
 					break;
 				default:
+					puchar('%');
 					puchar(format[i]);
-					n_val++;
+					n_val += 2;
 					break;
 			}
 		}
