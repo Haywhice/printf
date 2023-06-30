@@ -17,6 +17,7 @@ void getInt(int num, int *count)
 	{
 		puchar('-');
 		num = num * (-1);
+		(*count)++;
 	}
 
 	n = num / 10;
