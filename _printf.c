@@ -8,9 +8,8 @@
   */
 int _printf(const char *format, ...)
 {
-	int i, n_val=0, s_val;
+	int i, n_val = 0, s_val;
 	va_list args;
-	
 	if (format == NULL)
 	return (n_val);
 
@@ -21,34 +20,30 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			puchar(format[i]);
-			n_val += 1;
 		}
-		else
-		{
-			i++;
-			switch (format[i])
+		else if (format[i + 1] == 'c')
 			{
-				case 'c':
-					puchar(va_arg(args, int));
-					n_val++;
-					break;
-				case 's':
-					s_val = put_s(va_arg(args, char *));
-					n_val += s_val;
-					break;
-				case '%':
-					puchar('%');
-					n_val++;
-					break;
-				default:
-					puchar('%');
-					puchar(format[i]);
-					n_val += 2;
-					break;
+				puchar(va_arg(args, int));
+				i++;
 			}
-		}
+		else if (format[i + 1] == 's')
+			{
+				n_val += put_s(va_arg(args, char *));
+				i++;
+				n_val += (n_val - 1);
+			}
+		else if (format[i + 1] == '%')
+			{
+				puchar('%');
+				i++;
+			}
+		else if ((format[i + 1] == 'd') || (format[i + 1] == 'i'))
+			{
+				get_int(va_arg(args, int));
+				h++;
+			}
+		n_val += 1;
 	}
 	va_end(args);
 	return (n_val);
 }
-
