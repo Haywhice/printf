@@ -20,6 +20,6 @@ r_val += 1;
 i++;
 }
 }
-putchr('\n');
+puchar('\n');
 return (r_val);
 }

@@ -1,20 +1,16 @@
 #include "main.h"
-
 /**
-  * _printf - print out values
-  * @format: string that will be printed
-  *
-  * Return: returns pointer to buffer
-  */
+ * _printf - print out values
+ * @format: string that will be printed
+ * Return: returns pointer to buffer
+ */
 int _printf(const char *format, ...)
 {
-	int i, n_val = 0, s_val;
+	int i, n_val = 0;
 	va_list args;
 	if (format == NULL)
 	return (n_val);
-
 	va_start(args, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -39,8 +35,8 @@ int _printf(const char *format, ...)
 			}
 		else if ((format[i + 1] == 'd') || (format[i + 1] == 'i'))
 			{
-				get_int(va_arg(args, int));
-				h++;
+				getInt(va_arg(args, int));
+				i++;
 			}
 		n_val += 1;
 	}
