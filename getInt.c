@@ -2,11 +2,12 @@
 
 /**
  * getInt - gets integer value
- * @num: The character to print
+ *
+*@num: The character to print
  * Return: On success 1.
  */
 
-void getInt(int num)
+void getInt(int num, int *count)
 {
 	int n;
 
@@ -14,9 +15,10 @@ void getInt(int num)
 		return;
 
 	n = num / 10;
-
-	getInt(n);
+	(*count)++;
+	getInt(n, count);
 	puchar(num % 10 + '0');
+	
 
 	return;
 }

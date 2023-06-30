@@ -7,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, n_val = 0;
+	int i, n_val = 0, count = 0;
 	va_list args;
 	if (format == NULL)
 	return (n_val);
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			}
 		else if ((format[i + 1] == 'd') || (format[i + 1] == 'i'))
 			{
-				getInt(va_arg(args, int));
+				getInt(va_arg(args, int), &count);
 				i++;
 			}
 	/*	else if (format[i + 1] == '\0')
@@ -48,5 +48,5 @@ int _printf(const char *format, ...)
 */	n_val += 1;
 	}
 	va_end(args);
-	return (n_val);
+	return (n_val + count - 1);
 }

@@ -8,5 +8,5 @@ int put_s(char *string);
 int puchar(char c);
 int _printf(const char *format, ...);
 int put_cs(char *string);
-void getInt(int num);
+void getInt(int num, int*);
 #endif
