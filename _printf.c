@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 /**
  * _printf - print out values
@@ -38,13 +39,13 @@ int _printf(const char *format, ...)
 				getInt(va_arg(args, int));
 				i++;
 			}
+				
 		else
         		{
-	        /*puchar('%');*/
-      		puchar(format[i]);
-         	 n_val += 2;
-			}
-		n_val += 1;
+      			puchar(format[i]);
+	         	 n_val += 2;
+	}
+	n_val += 1;
 	}
 	va_end(args);
 	return (n_val);
