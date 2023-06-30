@@ -8,8 +8,11 @@
   */
 int _printf(const char *format, ...)
 {
-	unsigned int i, n_val, s_val;
+	int i, n_val=0, s_val;
 	va_list args;
+	
+	if (format == NULL)
+	return (n_val);
 
 	va_start(args, format);
 

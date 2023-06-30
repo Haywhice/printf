@@ -8,6 +8,7 @@
  */
 int put_s(char *string)
 {
+
 int  i = 0, r_val = 0;
 
 if (string)
