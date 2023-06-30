@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			puchar(format[i]);
+
 		}
 		else if (format[i + 1] == 'c')
 			{
@@ -39,13 +40,12 @@ int _printf(const char *format, ...)
 				getInt(va_arg(args, int));
 				i++;
 			}
-				
-		else
-        		{
-      			puchar(format[i]);
-	         	 n_val += 2;
-	}
-	n_val += 1;
+	/*	else if (format[i + 1] == '\0')
+*		{
+*	puchar(format[i]);
+*        	 n_val += 2;
+*	}
+*/	n_val += 1;
 	}
 	va_end(args);
 	return (n_val);
