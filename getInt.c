@@ -13,6 +13,11 @@ void getInt(int num, int *count)
 
 	if (num == 0)
 		return;
+	if (num < 0)
+	{
+		puchar('-');
+		num = num * (-1);
+	}
 
 	n = num / 10;
 	(*count)++;
