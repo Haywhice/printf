@@ -4,9 +4,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int put_s(char *string);
+int put_s(const char *str);
 int puchar(char c);
 int _printf(const char *format, ...);
 int put_cs(char *string);
-void getInt(int num, int*);
+int put_d(int n);
 #endif

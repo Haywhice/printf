@@ -2,20 +2,20 @@
 
 /**
  * put_s - prints the character c to stdout
- * @string: The character to print
+ * @str: The character to print
  *
  * Return: on succes return r_val
  */
-int put_s(char *string)
+int put_s(const char *str)
 {
 
 int  i = 0, r_val = 0;
 
-if (string)
+if (str)
 {
-while (string[i] != '\0')
+while (str[i] != '\0')
 {
-puchar(string[i]);
+puchar(str[i]);
 r_val += 1;
 i++;
 }
